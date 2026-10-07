@@ -1,0 +1,72 @@
+@use "variables" as *;
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.site-header {
+  border-bottom: 1px solid $line;
+  background: rgba(251, 248, 243, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 4.5rem;
+  padding: 0.8rem 0;
+}
+
+.logo {
+  font-family: $serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+}
+
+.nav__link {
+  color: $muted;
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  &.is-active,
+  &:hover {
+    color: $ink;
+  }
+
+  &.is-active {
+    box-shadow: inset 0 -2px 0 $accent;
+  }
+}
+
+.site-main {
+  flex: 1;
+  padding: 2.5rem 0 4rem;
+}
+
+.site-footer {
+  border-top: 1px solid $line;
+  color: $muted;
+  padding: 1.4rem 0 1.8rem;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 720px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}

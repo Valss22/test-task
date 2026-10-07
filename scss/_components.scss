@@ -1,0 +1,279 @@
+@use "variables" as *;
+
+.eyebrow {
+  margin-bottom: 0.7rem;
+  color: $accent;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero {
+  max-width: 46rem;
+  margin-bottom: 3.5rem;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+.hero__text,
+.lead {
+  color: $muted;
+  font-family: $serif;
+  font-size: 1.35rem;
+  font-weight: 560;
+  line-height: 1.45;
+}
+
+.category-block {
+  padding-top: 2.2rem;
+  margin-top: 2.2rem;
+  border-top: 1px solid $line;
+}
+
+.category-block__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.category-block__description {
+  max-width: 42rem;
+  margin-top: 0.7rem;
+  color: $muted;
+}
+
+.page-head {
+  max-width: 44rem;
+  margin-bottom: 1.8rem;
+}
+
+.page-head__meta,
+.article__meta,
+.card__meta {
+  color: $muted;
+  font-size: 0.92rem;
+}
+
+.page-head__meta {
+  margin-top: 1rem;
+}
+
+.button,
+.sort__link,
+.pagination__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  padding: 0.4rem 0.95rem;
+  border: 1px solid $ink;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.button:hover,
+.sort__link.is-active,
+.pagination__link.is-current {
+  background: $ink;
+  color: $paper;
+}
+
+.sort {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.sort__link {
+  border-color: $line;
+  background: $paper;
+  font-weight: 600;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: $paper;
+  border: 1px solid $line;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+.card__media {
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: $green;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+}
+
+.card:hover .card__media img {
+  transform: scale(1.04);
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+  padding: 1.05rem 1.1rem 1.15rem;
+}
+
+.card__title {
+  font-size: 1.35rem;
+}
+
+.card__title a:hover,
+.tags a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.card__text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  color: $muted;
+}
+
+.card__meta {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.7rem;
+  list-style: none;
+}
+
+.tags a {
+  color: $accent;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 2rem;
+}
+
+.pagination__link {
+  min-width: 2.6rem;
+  border-color: $line;
+  background: $paper;
+}
+
+.pagination__link.is-disabled {
+  color: $muted;
+  border-color: transparent;
+  background: transparent;
+}
+
+.article {
+  width: min(740px, 100%);
+  margin: 0 auto;
+}
+
+.article__head h1 {
+  margin: 0.8rem 0 1rem;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+}
+
+.article__meta {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.article__figure {
+  margin: 1.8rem 0 1.6rem;
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: $radius;
+    background: $green;
+  }
+}
+
+.prose p {
+  margin-bottom: 1.1rem;
+  font-family: $serif;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.similar {
+  margin-top: 3.5rem;
+  padding: 2.5rem 0 0.5rem;
+  border-top: 1px solid $line;
+
+  h2 {
+    margin-bottom: 1.3rem;
+  }
+}
+
+.empty {
+  max-width: 36rem;
+  padding: 2rem 0 1rem;
+
+  h1,
+  h2 {
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+    color: $muted;
+  }
+}
+
+@media (min-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 980px) {
+  .cards--three {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .category-block__top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
