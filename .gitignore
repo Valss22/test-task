@@ -1,0 +1,9 @@
+/vendor/
+/node_modules/
+/.idea/
+/storage/smarty/compile/*
+!/storage/smarty/compile/.gitkeep
+/storage/smarty/cache/*
+!/storage/smarty/cache/.gitkeep
+/public/assets/images/*
+!/public/assets/images/.gitkeep

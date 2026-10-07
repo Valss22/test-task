@@ -1,0 +1,6 @@
+.git
+node_modules
+vendor
+storage/smarty/compile/*
+storage/smarty/cache/*
+public/assets/images/*.svg
